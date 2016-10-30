@@ -1,0 +1,47 @@
+ext{
+    minSdkVersion = 21
+    targetSdkVersion = 23
+    compileSdkVersion = 23
+    buildToolsVersion = '23.0.2'
+
+    // App dependencies
+    supportLibraryVersion = '23.2.1'
+    guavaVersion = '19.0'
+    glideVersion = '3.6.1'
+    junitVersion = '4.12'
+    mockitoVersion = '1.10.19'
+    powerMockito = '1.6.2'
+    hamcrestVersion = '1.3'
+    runnerVersion = '0.5'
+    rulesVersion = '0.5'
+    espressoVersion = '2.2.2'
+    sfMobileCommonsVersion ="2.0.3"
+    sfAndroidCommonsVersion="2.0.1"
+    sfVespaJavaCommon="0.1.0-SNAPSHOT"
+    daggerVersion="2.5"
+    glassfishVersion="10.0-b28"
+    okHttpLoggingInterceptorVersion="3.0.1"
+    okHttpVersion="3.1.0"
+    retrofitVersion="2.0.0"
+    retrofitConverterVersion="2.0.0"
+    jacksonVersion="2.6.4"
+    retrofit1Version="1.9.0"
+    gsonVersion="2.2.4"
+    wasyncVersion="2.1.2"
+    slf4jAndroidVersion="1.7.12"
+    dbflowVersion="3.1.1"
+    sqlCipherVersion="3.5.1"
+    libPhoneNumberVersion="7.2.5"
+	googleAutoServiceVersion="1.0-rc2"
+	googleAutoCommon="0.4"
+	freeMarkerVersion="2.3.23"
+    floatingActionMenu="1.6.3"
+    greenrobotEventbus="3.0.0"
+    greenrobotEventbusApt="3.0.1"
+    timberVersion="4.3.1"
+    ibanLibVersion="1.4.0"
+    smoothProgressBarVersion="1.1.0"
+    volleyVersion="1.0.0"
+    flexboxLayoutVersion="0.2.3"
+
+}

@@ -1,0 +1,46 @@
+ext {}
+//1. Env Variablen
+Map<String, String> env = System.getenv();
+env.entrySet().each { entry -> ext.set(entry.key, entry.value) }
+//2. Falls vorhanden eigen project properties
+def project_properties_file = "project_properties.gradle";
+if (file("${rootDir}/${project_properties_file}").exists()) {
+    apply from: "${rootDir}/${project_properties_file}", to: ext
+}
+//3. Locale Variablen (überschreibt envVars
+//Parst Local properties und speicher diese in ext
+//Da alles in props string ist sollte man lieber local.properties.gradle benutzen
+//
+Properties props = new Properties()
+def localProperties = new File(rootDir, "local.properties")
+if (localProperties.exists()) {
+    localProperties.withInputStream { instr ->
+        props.load(instr)
+    }
+}
+
+props.propertyNames().each { propName ->
+    def propVal = props.getProperty(propName);
+    def bolVal = propVal as Boolean;
+    //  println "Bool val ${bolVal} "
+    if (propVal.toLowerCase() == "true" || propVal.toLowerCase() == "false") {
+        //    println "setBoolean ${propName} ${propVal} exists  ${ext.get(propName)}"
+
+        ext.set(propName, Boolean.valueOf(propVal))
+        //  println "setBoolean ${propName} ${propVal} exists  ${ext.get(propName)}"
+
+    } else {
+        ext.set(propName, propVal)
+    }
+}
+
+//Diese Datei soll nur aus variable=wert Einträgen bestehen
+//Diese Datei überschreibt vorhanden werte
+def localGradleProperties = new File(rootDir, "local.properties.gradle")
+if (localGradleProperties.exists()) {
+    apply from: localGradleProperties, to: ext
+} else {
+    localGradleProperties.text = "//Dieses File wurde von read-properties erzeugt und analog zu local.properties zu betrachten.\n " +
+            "//Der unterschied ist nur dass hier deklerarierte Variablen haben konkrete typen und nicht wie in local.properties nur String->string.\n" +
+            "//isTest=true "
+}

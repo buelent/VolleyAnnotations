@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven { url 'http://download.crashlytics.com/maven' }
+    }
+}
+allprojects { p ->
+    repositories {
+        mavenLocal()
+        jcenter()
+        mavenCentral()
+        maven {
+            name 'jitpack.io'
+            url "https://jitpack.io"
+        }
+        maven {
+            name 'sonatype-snapshots'
+            url "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+
+
+
+    }
+}
