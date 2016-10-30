@@ -1,9 +1,10 @@
-apply plugin: 'java'
+
 ext{
 
     googleAutoServiceVersion="1.0-rc2"
     googleAutoCommon="0.6"
     javaPoet="1.7.0"
+
 
 }
 dependencies {
@@ -12,7 +13,6 @@ dependencies {
     compile "com.google.auto:auto-common:${googleAutoCommon}"
     compile "com.squareup:javapoet:${javaPoet}"
     compile project(":volleyannotations")
-    compileOnly 'com.android.volley:volley:1.0.0'
     compile "org.jtwig:jtwig-core:5.64"
     compile "org.jtwig:jtwig-json-extension:1.+"
 }
