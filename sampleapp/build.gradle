@@ -1,19 +1,11 @@
 apply plugin: 'com.android.application'
-buildscript {
-    repositories {
-        mavenCentral()
-        jcenter()
-    }
-    dependencies{
-                classpath 'com.android.tools.build:gradle:2.2.2'
-    }
-}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
 
     defaultConfig {
-        applicationId "li.ulas.volley.annotation.sample"
+        applicationId "li.ulas.volley.annotations.sampleapp"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -31,7 +23,4 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.android.support:design:25.0.0'
-    compile "com.github.buelent:volleyannotations:v1.0.0"
-    compile "com.github.buelent:volley-annotation-processor:v1.0.0"
 }
