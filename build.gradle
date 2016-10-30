@@ -30,6 +30,8 @@ allprojects {
 }
 
 subprojects {
+    if(it.name!="sample") {
+
     apply plugin: 'java'
     apply plugin: 'maven'
 
@@ -49,5 +51,9 @@ subprojects {
     artifacts {
         archives sourcesJar
         archives javadocJar
+    }
+        dependencies{
+            compile 'com.github.jitpack:gradle-multiple-jars:1.0.1'
+        }
     }
 }
