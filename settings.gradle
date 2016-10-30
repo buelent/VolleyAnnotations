@@ -1,1 +1,1 @@
-include ':volleyannotations', ':volley-annotation-processor'
+include ':volleyannotations', ':volley-annotation-processor', ':sample'
